@@ -54,6 +54,13 @@ int main (void)
 
 int linearSearch(int aArray[], int size, int val) // returns the position of int through linearSearch. Returns -1 if not found
 {
+    // aka sequential searching
+    // searches list one element at a time in order
+
+    // Will find an item in array[N] on average of N/2 attempts
+    // Not very efficient
+    // Slow
+
     int posFound = -1;
     for (int i = 0; i < size; ++i)
     {
@@ -68,6 +75,17 @@ int linearSearch(int aArray[], int size, int val) // returns the position of int
 
 int binarySearch(int aArray[], int size, int val) // returns the position of int through binarySearch. Returns -1 if not found
 {
+    // When x is the desired item:
+    //   Check the middle item, y
+    //      if x == y, return
+    //      if x < y, decrease total array to smaller half, check middle again
+    //      if x > y, decrease total array to larger half, check middle again
+
+    // More efficient than linear search
+    // Will find item on average of log(n) attempts
+    // Every iteration of Binary Search eliminates 1/2 of the list
+    // Requirement: Array must be sorted already
+
     int min = 0;
     int max = size - 1;
     bool found = false;
@@ -96,6 +114,11 @@ int binarySearch(int aArray[], int size, int val) // returns the position of int
 
 void bubbleSort(int aArray[], int size) // sorts array with bubbleSort
 {
+    // Loop over the data (n-1) times
+    // If (current item) > (next item) -> swap
+
+    // Complexity: Best: N (already sorted) Worst: N^2
+
     int temp;
 
     for (int i = 0; i < size; ++i)
