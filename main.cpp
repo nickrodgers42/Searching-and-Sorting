@@ -140,6 +140,14 @@ void bubbleSort(int aArray[], int size) // sorts array with bubbleSort
 
 void selectionSort(int aArray[], int size) // sorts array with selectionSort
 {
+    // Tries to minimize the number of swaps
+    // For every position in the list, 0 through N-1 as i
+    // Loop over the list, find the smallest item, and swap into current location
+
+    // Start at index i = 0,
+    // Look through the rest of the array to find the smallest
+    // Swap the smallest with the contents of index i
+
     int currentMin = 0;
     int temp;
 
@@ -166,6 +174,10 @@ void selectionSort(int aArray[], int size) // sorts array with selectionSort
 
 void insertionSort(int aArray[], int size) // sorts array with insertionSort
 {
+    // Start at index i = 1
+    // Compare current index with the values before it
+    // Insert current index in its position in the sorted array before it
+    
     int temp;
 
     for (int i = 1; i < size; ++i)
